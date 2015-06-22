@@ -1,0 +1,30 @@
+<values>
+<value name="cooling"
+type="int">1</value>
+<value name="filament3"
+type="string">Filamento 1.75mm</value>
+<value name="filament2"
+type="string">Filamento 1.75mm</value>
+<value name="filament1"
+type="string">Filamento 1.75mm</value>
+<value name="printer"
+type="string">DIMA BOX para fil. flexible</value>
+<value name="overrideSettings"
+type="int">0</value>
+<value name="version"
+type="int">1</value>
+<value name="supportMaterial"
+type="int">0</value>
+<value name="print"
+type="string">Calidad alta BOX</value>
+<value name="fillAngle"
+type="string">45</value>
+<value name="fillDensity"
+type="string">0.2</value>
+<value name="solidFillPatern"
+type="string">rectilinear</value>
+<value name="fillPattern"
+type="string">honeycomb</value>
+<value name="layerHeight"
+type="string">0.2</value>
+</values>

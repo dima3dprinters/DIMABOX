@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/madrid/Programas/RepetierHost
+mono RepetierHost.exe -home /home/madrid/Programas&

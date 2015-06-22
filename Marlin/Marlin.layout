@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Arduino Mega 2560/ADK" />
+	<File name="language_pt.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2552" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="language_es.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2103" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="ConfigurationStore.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2735" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="stepper.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="32934" topLine="1068" />
+		</Cursor>
+	</File>
+	<File name="cardreader.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11578" topLine="541" />
+		</Cursor>
+	</File>
+	<File name="planner.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4804" topLine="106" />
+		</Cursor>
+	</File>
+	<File name="language_an.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2090" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="Hysteresis.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7043" topLine="199" />
+		</Cursor>
+	</File>
+	<File name="ultralcd_st7920_u8glib_rrd.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="475" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="U8glib\U8glib.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4605" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="language_ca.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2539" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="U8glib\utility\u8g.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="40886" topLine="1111" />
+		</Cursor>
+	</File>
+	<File name="DOGMbitmaps.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="162" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+		</Folding>
+	</File>
+	<File name="MarlinSerial.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3279" topLine="102" />
+		</Cursor>
+	</File>
+	<File name="pins.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3997" topLine="143" />
+		</Cursor>
+	</File>
+	<File name="Marlin.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7317" topLine="223" />
+		</Cursor>
+	</File>
+	<File name="ultralcd.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1379" topLine="37" />
+		</Cursor>
+	</File>
+	<File name="language_eu.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2516" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="Marlin_main.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="34757" topLine="1001" />
+		</Cursor>
+	</File>
+	<File name="temperature.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5070" topLine="159" />
+		</Cursor>
+	</File>
+	<File name="Configuration.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="810" zoom_1="-1" zoom_2="-2">
+		<Cursor>
+			<Cursor1 position="2247" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="Configuration_adv.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11477" topLine="247" />
+		</Cursor>
+	</File>
+	<File name="dogm_font_data_marlin.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7795" topLine="156" />
+		</Cursor>
+	</File>
+	<File name="ConfigurationStore.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="264" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="language_nl.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2528" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="language.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3216" topLine="88" />
+		</Cursor>
+	</File>
+	<File name="U8glib\utility\chessengine.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="327" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="cardreader.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2709" topLine="67" />
+		</Cursor>
+	</File>
+	<File name="ultralcd.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="43284" topLine="1250" />
+		</Cursor>
+	</File>
+	<File name="dogm_lcd_implementation.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2370" topLine="92" />
+		</Cursor>
+	</File>
+	<File name="Hysteresis.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="903" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="0" />
+		</Folding>
+	</File>
+	<File name="planner.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2299" topLine="70" />
+		</Cursor>
+	</File>
+	<File name="language_en.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2465" topLine="39" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

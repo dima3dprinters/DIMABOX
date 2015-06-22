@@ -1,0 +1,1235 @@
+# depslib dependency file v1.0
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\blinkm.cpp
+	"Marlin.h"
+	"Arduino.h"
+	"WProgram.h"
+	"BlinkM.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\marlin.h
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<inttypes.h>
+	<util/delay.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<avr/interrupt.h>
+	"fastio.h"
+	"Configuration.h"
+	"pins.h"
+	"Arduino.h"
+	"WProgram.h"
+	"HardwareSerial.h"
+	"MarlinSerial.h"
+	"WString.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\fastio.h
+	<avr/io.h>
+
+1434563184 c:\users\samuel\desktop\marlin_box_1.0.1\configuration.h
+	"boards.h"
+	"Configuration_adv.h"
+	"thermistortables.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\boards.h
+
+1434737747 c:\users\samuel\desktop\marlin_box_1.0.1\configuration_adv.h
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\thermistortables.h
+	"Marlin.h"
+
+1433692803 c:\users\samuel\desktop\marlin_box_1.0.1\pins.h
+	"boards.h"
+
+1371036702 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\arduino.h
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<avr/pgmspace.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	"binary.h"
+	"WCharacter.h"
+	"WString.h"
+	"HardwareSerial.h"
+	"pins_arduino.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\binary.h
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\wcharacter.h
+	<ctype.h>
+
+1371036734 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\wstring.h
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<avr/pgmspace.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\hardwareserial.h
+	<inttypes.h>
+	"Stream.h"
+	"USBAPI.h"
+
+1371036430 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\stream.h
+	<inttypes.h>
+	"Print.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\print.h
+	<inttypes.h>
+	<stdio.h>
+	"WString.h"
+	"Printable.h"
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\printable.h
+	<new.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\new.h
+	<stdlib.h>
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\usbapi.h
+
+1362990550 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\variants\mega\pins_arduino.h
+	<avr/pgmspace.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\marlinserial.h
+	"Marlin.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\blinkm.h
+	"Arduino.h"
+	"WProgram.h"
+	"Wire.h"
+
+1434385508 source:c:\users\samuel\desktop\marlin_box_1.0.1\cardreader.cpp
+	"Marlin.h"
+	"cardreader.h"
+	"ultralcd.h"
+	"stepper.h"
+	"temperature.h"
+	"language.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\cardreader.h
+	"SdFile.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdfile.h
+	"Marlin.h"
+	"SdBaseFile.h"
+	<Print.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdbasefile.h
+	"Marlin.h"
+	"Marlin.h"
+	"SdFatConfig.h"
+	"SdVolume.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdfatconfig.h
+	"Marlin.h"
+	<stdint.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdvolume.h
+	"Marlin.h"
+	"SdFatConfig.h"
+	"Sd2Card.h"
+	"SdFatStructs.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sd2card.h
+	"Marlin.h"
+	"SdFatConfig.h"
+	"Sd2PinMap.h"
+	"SdInfo.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sd2pinmap.h
+	"Marlin.h"
+	<avr/io.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdinfo.h
+	"Marlin.h"
+	<stdint.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdfatstructs.h
+	"Marlin.h"
+
+1434544382 c:\users\samuel\desktop\marlin_box_1.0.1\ultralcd.h
+	"Marlin.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\stepper.h
+	"planner.h"
+
+1434540495 c:\users\samuel\desktop\marlin_box_1.0.1\planner.h
+	"Marlin.h"
+	"vector_3.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\vector_3.h
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\temperature.h
+	"Marlin.h"
+	"planner.h"
+	"stepper.h"
+
+1433689442 c:\users\samuel\desktop\marlin_box_1.0.1\language.h
+
+1434546185 source:c:\users\samuel\desktop\marlin_box_1.0.1\configurationstore.cpp
+	"Marlin.h"
+	"planner.h"
+	"temperature.h"
+	"ultralcd.h"
+	"ConfigurationStore.h"
+
+1434543564 c:\users\samuel\desktop\marlin_box_1.0.1\configurationstore.h
+	"Configuration.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\digipot_mcp4451.cpp
+	"Configuration.h"
+	"Stream.h"
+	"utility/twi.h"
+	"Wire.h"
+
+1433758469 source:c:\users\samuel\desktop\marlin_box_1.0.1\hysteresis.cpp
+	"Hysteresis.h"
+	"Configuration.h"
+	"Marlin.h"
+	"planner.h"
+	"stepper.h"
+	"temperature.h"
+	"ultralcd.h"
+	"language.h"
+
+1433758240 c:\users\samuel\desktop\marlin_box_1.0.1\hysteresis.h
+	"Configuration.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\liquidcrystalrus.cpp
+	"LiquidCrystalRus.h"
+	<stdio.h>
+	<string.h>
+	<inttypes.h>
+	<avr/pgmspace.h>
+	"Arduino.h"
+	"WProgram.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\liquidcrystalrus.h
+	<inttypes.h>
+	"Print.h"
+
+1434546906 source:c:\users\samuel\desktop\marlin_box_1.0.1\marlin_main.cpp
+	"Marlin.h"
+	"ultralcd.h"
+	"vector_3.h"
+	"qr_solve.h"
+	"ultralcd.h"
+	"planner.h"
+	"stepper.h"
+	"temperature.h"
+	"motion_control.h"
+	"cardreader.h"
+	"watchdog.h"
+	"ConfigurationStore.h"
+	"language.h"
+	"pins_arduino.h"
+	"math.h"
+	"BlinkM.h"
+	"Wire.h"
+	"Servo.h"
+	<SPI.h>
+	"SdFatUtil.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\qr_solve.h
+	"Configuration.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\motion_control.h
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\watchdog.h
+	"Marlin.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\servo.h
+	<inttypes.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\sdfatutil.h
+	"Marlin.h"
+	"Marlin.h"
+	"MarlinSerial.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\marlinserial.cpp
+	"Marlin.h"
+	"MarlinSerial.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\motion_control.cpp
+	"Marlin.h"
+	"stepper.h"
+	"planner.h"
+
+1433758387 source:c:\users\samuel\desktop\marlin_box_1.0.1\planner.cpp
+	"Marlin.h"
+	"planner.h"
+	"stepper.h"
+	"temperature.h"
+	"ultralcd.h"
+	"language.h"
+	"Hysteresis.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\qr_solve.cpp
+	"qr_solve.h"
+	<stdlib.h>
+	<math.h>
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\sd2card.cpp
+	"Marlin.h"
+	"Sd2Card.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\sdbasefile.cpp
+	"Marlin.h"
+	"SdBaseFile.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\sdfatutil.cpp
+	"Marlin.h"
+	"SdFatUtil.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\sdfile.cpp
+	"Marlin.h"
+	"SdFile.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\sdvolume.cpp
+	"Marlin.h"
+	"SdVolume.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\servo.cpp
+	"Configuration.h"
+	<avr/interrupt.h>
+	<Arduino.h>
+	"Servo.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\stepper.cpp
+	"Marlin.h"
+	"stepper.h"
+	"planner.h"
+	"temperature.h"
+	"ultralcd.h"
+	"language.h"
+	"cardreader.h"
+	"speed_lookuptable.h"
+	<SPI.h>
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\speed_lookuptable.h
+	"Marlin.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\temperature.cpp
+	"Marlin.h"
+	"ultralcd.h"
+	"temperature.h"
+	"watchdog.h"
+	"Sd2PinMap.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\u8glib.cpp
+	"U8glib.h"
+
+1433521967 c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\u8glib.h
+	<Print.h>
+	"U8glib/utility/u8g.h"
+
+1419204340 c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g.h
+	<stddef.h>
+	<stdint.h>
+	<avr/pgmspace.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\chessengine.c
+	"u8g.h"
+	<stdio.h>
+	<string.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_bitmap.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_circle.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_clip.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_api.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_api_16gr.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_attiny85_hw_spi.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_common.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1433520862 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_fast_parallel.c
+	"u8g.h"
+	<wiring_private.h>
+	<pins_arduino.h>
+	<Arduino.h>
+
+1371036726 c:\datos\programas sin instalación\codeblocks\arduino\hardware\arduino\cores\arduino\wiring_private.h
+	<avr/io.h>
+	<avr/interrupt.h>
+	<stdio.h>
+	<stdarg.h>
+	"Arduino.h"
+
+1433520851 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_hw_spi.c
+	"u8g.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+	<WProgram.h>
+	<Arduino.h>
+	<Arduino.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_hw_usart_spi.c
+	"u8g.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+	<WProgram.h>
+	<Arduino.h>
+
+1433520874 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_no_en_parallel.c
+	"u8g.h"
+	<wiring_private.h>
+	<pins_arduino.h>
+	<Arduino.h>
+
+1433520882 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_parallel.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1433520899 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_port_d_wr.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1433520894 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_ssd_i2c.c
+	"u8g.h"
+
+1433520904 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_st7920_custom.c
+	"u8g.h"
+	<WProgram.h>
+	"wiring_private.h"
+	"pins_arduino.h"
+	<Arduino.h>
+	"wiring_private.h"
+
+1433520908 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_st7920_hw_spi.c
+	"u8g.h"
+	<WProgram.h>
+	"wiring_private.h"
+	"pins_arduino.h"
+	<Arduino.h>
+	"wiring_private.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+
+1433520912 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_st7920_spi.c
+	"u8g.h"
+	<WProgram.h>
+	"wiring_private.h"
+	"pins_arduino.h"
+	<Arduino.h>
+	"wiring_private.h"
+
+1433520920 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_std_sw_spi.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1433520927 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_sw_spi.c
+	"u8g.h"
+	<WProgram.h>
+	"wiring_private.h"
+	"pins_arduino.h"
+	<Arduino.h>
+	"wiring_private.h"
+
+1433520941 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_t6963.c
+	"u8g.h"
+	<wiring_private.h>
+	<pins_arduino.h>
+	<Arduino.h>
+
+1433520938 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_arduino_uc_i2c.c
+	"u8g.h"
+
+1433520948 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_atmega_hw_spi.c
+	"u8g.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+
+1433520957 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_atmega_parallel.c
+	"u8g.h"
+
+1433520967 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_atmega_st7920_hw_spi.c
+	"u8g.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+
+1433520976 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_atmega_st7920_spi.c
+	"u8g.h"
+
+1433520984 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_atmega_sw_spi.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_i2c.c
+	"u8g.h"
+	<avr/io.h>
+	<util/twi.h>
+	"Arduino.h"
+	"sam.h"
+	<wiringPi.h>
+	<wiringPiI2C.h>
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+
+1433522223 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_io.c
+	"u8g.h"
+	<avr/interrupt.h>
+	<avr/io.h>
+	<wiringPi.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_null.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_raspberrypi_hw_spi.c
+	"u8g.h"
+	<wiringPiSPI.h>
+	<wiringPi.h>
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_com_raspberrypi_ssd_i2c.c
+	"u8g.h"
+	<wiringPi.h>
+	<wiringPiI2C.h>
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_cursor.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_delay.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+	<wiringPi.h>
+	<avr/interrupt.h>
+	<avr/io.h>
+	<util/delay.h>
+	<delays.h>
+	"plib.h"
+
+1433522284 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_a2_micro_printer.c
+	"u8g.h"
+
+1433522299 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_flipdisc_2x7.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_gprof.c
+	"u8g.h"
+
+1433522312 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ht1632.c
+	"u8g.h"
+	<WProgram.h>
+	<Arduino.h>
+
+1433522304 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ili9325d_320x240.c
+	"u8g.h"
+
+1433522319 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ks0108_128x64.c
+	"u8g.h"
+
+1433522380 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_lc7981_160x80.c
+	"u8g.h"
+
+1433522386 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_lc7981_240x128.c
+	"u8g.h"
+
+1433522389 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_lc7981_240x64.c
+	"u8g.h"
+
+1433522393 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_lc7981_320x64.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ld7032_60x32.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_null.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_pcd8544_84x48.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_pcf8812_96x65.c
+	"u8g.h"
+
+1433522398 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_sbn1661_122x32.c
+	"u8g.h"
+
+1433522402 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1306_128x32.c
+	"u8g.h"
+
+1433522415 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1306_128x64.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1309_128x64.c
+	"u8g.h"
+
+1433522423 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1322_nhd31oled_bw.c
+	"u8g.h"
+
+1433522431 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1322_nhd31oled_gr.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1325_nhd27oled_bw.c
+	"u8g.h"
+
+1433522438 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1325_nhd27oled_bw_new.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1325_nhd27oled_gr.c
+	"u8g.h"
+
+1433522445 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1325_nhd27oled_gr_new.c
+	"u8g.h"
+
+1433522456 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1327_96x96_gr.c
+	"u8g.h"
+
+1433522486 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_ssd1351_128x128.c
+	"u8g.h"
+
+1433522471 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_64128n.c
+	"u8g.h"
+
+1433522478 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_dogm128.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_dogm132.c
+	"u8g.h"
+
+1433522490 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_lm6059.c
+	"u8g.h"
+
+1433522494 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_lm6063.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_nhd_c12832.c
+	"u8g.h"
+
+1433522497 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7565_nhd_c12864.c
+	"u8g.h"
+
+1433522501 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7687_c144mvgd.c
+	"u8g.h"
+
+1433522509 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7920_128x64.c
+	"u8g.h"
+
+1433522515 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7920_192x32.c
+	"u8g.h"
+
+1433522521 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_st7920_202x32.c
+	"u8g.h"
+
+1433522525 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_t6963_128x128.c
+	"u8g.h"
+
+1433522528 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_t6963_128x64.c
+	"u8g.h"
+
+1433522531 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_t6963_240x128.c
+	"u8g.h"
+
+1433522534 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_t6963_240x64.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_tls8204_84x48.c
+	"u8g.h"
+
+1433522539 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1601_c128032.c
+	"u8g.h"
+
+1433522547 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1608_240x128.c
+	"u8g.h"
+
+1433522551 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1608_240x64.c
+	"u8g.h"
+
+1433522555 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1610_dogxl160.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1611_dogm240.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1611_dogxl240.c
+	"u8g.h"
+
+1433522559 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1701_dogs102.c
+	"u8g.h"
+
+1433522563 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_dev_uc1701_mini12864.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_ellipse.c
+	"u8g.h"
+
+1433522844 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_font.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_font_data.c
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_line.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_ll_api.c
+	<stddef.h>
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_page.c
+	"u8g.h"
+
+1433522705 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb.c
+	"u8g.h"
+
+1433522780 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb14v1.c
+	"u8g.h"
+	<string.h>
+
+1433522814 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb16h1.c
+	"u8g.h"
+	<string.h>
+
+1433522853 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb16h2.c
+	"u8g.h"
+	<string.h>
+
+1433522865 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb16v1.c
+	"u8g.h"
+	<string.h>
+
+1433522873 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb16v2.c
+	"u8g.h"
+	<string.h>
+
+1433522882 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb32h1.c
+	"u8g.h"
+	<string.h>
+
+1433522892 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8h1.c
+	"u8g.h"
+	<string.h>
+	<assert.h>
+
+1433522899 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8h1f.c
+	"u8g.h"
+	<string.h>
+
+1433522911 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8h2.c
+	"u8g.h"
+	<string.h>
+
+1433522915 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8h8.c
+	"u8g.h"
+
+1433522918 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8v1.c
+	"u8g.h"
+	<string.h>
+
+1433522921 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pb8v2.c
+	"u8g.h"
+	<string.h>
+
+1433522925 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pbxh16.c
+	"u8g.h"
+
+1433522930 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_pbxh24.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_polygon.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_rect.c
+	"u8g.h"
+
+1433524840 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_rot.c
+	"u8g.h"
+
+1433523226 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_scale.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_state.c
+	<stddef.h>
+	"u8g.h"
+	<avr/interrupt.h>
+	<stdio.h>
+	"sam.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_u16toa.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_u8toa.c
+	"u8g.h"
+
+1419204340 source:c:\users\samuel\desktop\marlin_box_1.0.1\u8glib\utility\u8g_virtual_screen.c
+	"u8g.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\vector_3.cpp
+	<math.h>
+	"Marlin.h"
+	"vector_3.h"
+
+1432962134 source:c:\users\samuel\desktop\marlin_box_1.0.1\watchdog.cpp
+	"Marlin.h"
+	<avr/wdt.h>
+	"watchdog.h"
+	"ultralcd.h"
+
+1434965544 source:c:\users\samuel\desktop\marlin_box_1.0.1\ultralcd.cpp
+	"temperature.h"
+	"ultralcd.h"
+	"Marlin.h"
+	"language.h"
+	"cardreader.h"
+	"temperature.h"
+	"stepper.h"
+	"ConfigurationStore.h"
+	"dogm_lcd_implementation.h"
+	"ultralcd_implementation_hitachi_HD44780.h"
+
+1434546424 c:\users\samuel\desktop\marlin_box_1.0.1\dogm_lcd_implementation.h
+	"U8glib/U8glib.h"
+	"DOGMbitmaps.h"
+	"dogm_font_data_marlin.h"
+	"ultralcd.h"
+	"ultralcd_st7920_u8glib_rrd.h"
+	"LiquidCrystalRus.h"
+	<LiquidCrystal.h>
+
+1433757537 c:\users\samuel\desktop\marlin_box_1.0.1\dogmbitmaps.h
+
+1433690018 c:\users\samuel\desktop\marlin_box_1.0.1\dogm_font_data_marlin.h
+	"U8glib/utility/u8g.h"
+	"U8glib/utility/u8g.h"
+
+1433690051 c:\users\samuel\desktop\marlin_box_1.0.1\ultralcd_st7920_u8glib_rrd.h
+	"Marlin.h"
+	"U8glib/U8glib.h"
+
+1432962134 c:\users\samuel\desktop\marlin_box_1.0.1\ultralcd_implementation_hitachi_hd44780.h
+	<Wire.h>
+	<LCD.h>
+	<LiquidCrystal_I2C.h>
+	<Wire.h>
+	<LiquidTWI2.h>
+	<Wire.h>
+	<LiquidTWI2.h>
+	<LiquidCrystal_I2C.h>
+	<LCD.h>
+	<LiquidCrystal_SR.h>
+	"LiquidCrystalRus.h"
+	<LiquidCrystal.h>
+

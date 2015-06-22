@@ -1,0 +1,27 @@
+<MWFConfig>
+  <FolderBrowserDialog>
+    <value name="Width" type="int">330</value>
+    <value name="Y" type="int">160</value>
+    <value name="X" type="int">518</value>
+    <value name="Height" type="int">351</value>
+  </FolderBrowserDialog>
+  <FileDialog>
+    <value name="FileNames" type="string-array">
+      <string>/home/madrid/Escritorio/elefante.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Overhangs.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Z resonance.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/XY resonance.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Negative space.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Fine positive.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Dimensional.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/Bridging.gco</string>
+      <string>/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models/bridging_test.stl</string>
+      <string>/home/madrid/Escritorio/Calibración/Cilindro.stl</string>
+    </value>
+    <value name="Height" type="int">412</value>
+    <value name="LastFolder" type="string">Desktop://</value>
+    <value name="Width" type="int">563</value>
+    <value name="Y" type="int">116</value>
+    <value name="X" type="int">398</value>
+  </FileDialog>
+</MWFConfig>

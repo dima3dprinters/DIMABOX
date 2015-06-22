@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Marlin" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Simulator - Debug">
+				<Option output="build/Marlin_sim.exe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="GCC" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-DARDUSIM" />
+					<Add option="-D__AVR_ATmega2560__" />
+					<Add option="-x c++" />
+					<Add directory="$(ARDUINO_DIR)/arduino/cores" />
+					<Add directory="$(ARDUINO_DIR)/arduino/variants/standard" />
+					<Add directory="$(ARDUINO_DIR)/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-lardusim" />
+				</Linker>
+				<Environment>
+					<Variable name="ARDUINO_DIR" value="$(APP_PATH)\ardusim" />
+				</Environment>
+			</Target>
+			<Target title="Simulator - Release">
+				<Option output="build/Marlin_sim.exe" prefix_auto="1" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="GCC" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-DARDUSIM" />
+					<Add option="-D__AVR_ATmega2560__" />
+					<Add option="-x c++" />
+					<Add directory="$(ARDUINO_DIR)/arduino/cores" />
+					<Add directory="$(ARDUINO_DIR)/arduino/variants/standard" />
+					<Add directory="$(ARDUINO_DIR)/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-lardusim" />
+				</Linker>
+				<Environment>
+					<Variable name="ARDUINO_DIR" value="$(APP_PATH)\ardusim" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Uno">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Uno" />
+					<Variable name="BOARD_ID" value="uno" />
+					<Variable name="MCU" value="atmega328p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="115200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Leonardo">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega32U4__" />
+					<Add option="-DUSB_VID=0x2341" />
+					<Add option="-DUSB_PID=0x8036" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/leonardo" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Leonardo" />
+					<Variable name="BOARD_ID" value="leonardo" />
+					<Variable name="MCU" value="atmega32u4" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Esplora">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega32U4__" />
+					<Add option="-DUSB_VID=0x2341" />
+					<Add option="-DUSB_PID=0x8037" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/leonardo" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Esplora" />
+					<Variable name="BOARD_ID" value="esplora" />
+					<Variable name="MCU" value="atmega32u4" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Micro">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega32U4__" />
+					<Add option="-DUSB_VID=0x2341" />
+					<Add option="-DUSB_PID=0x803C" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/micro" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Micro" />
+					<Variable name="BOARD_ID" value="micro" />
+					<Variable name="MCU" value="atmega32u4" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Duemilanove (328)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Duemilanove (328)" />
+					<Variable name="BOARD_ID" value="duemilanove328" />
+					<Variable name="MCU" value="atmega328p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Duemilanove (168)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega168__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Duemilanove (168)" />
+					<Variable name="BOARD_ID" value="duemilanove168" />
+					<Variable name="MCU" value="atmega168" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="19200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Nano (328)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/eightanaloginputs" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Nano (328)" />
+					<Variable name="BOARD_ID" value="nano328" />
+					<Variable name="MCU" value="atmega328p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Nano (168)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega168__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/eightanaloginputs" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Nano (168)" />
+					<Variable name="BOARD_ID" value="nano168" />
+					<Variable name="MCU" value="atmega168" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="19200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Mini (328)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/eightanaloginputs" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Mini (328)" />
+					<Variable name="BOARD_ID" value="mini328" />
+					<Variable name="MCU" value="atmega328p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Mini (168)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega168__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/eightanaloginputs" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Mini (168)" />
+					<Variable name="BOARD_ID" value="mini168" />
+					<Variable name="MCU" value="atmega168" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="19200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Pro Mini (328)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Pro Mini (328)" />
+					<Variable name="BOARD_ID" value="promini328" />
+					<Variable name="MCU" value="atmega328p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Pro Mini (168)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega168__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Pro Mini (168)" />
+					<Variable name="BOARD_ID" value="promini168" />
+					<Variable name="MCU" value="atmega168" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="19200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Mega 2560/ADK">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-w" />
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega2560__" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/mega" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="--relax -mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Mega 2560\ADK" />
+					<Variable name="BOARD_ID" value="mega2560" />
+					<Variable name="MCU" value="atmega2560" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Mega 1280">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega1280__" />
+					<Add option="-O2" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/mega" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Mega 1280" />
+					<Variable name="BOARD_ID" value="mega1280" />
+					<Variable name="MCU" value="atmega1280" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="57600" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Arduino Mega 8">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega328P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/standard" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Arduino Mega 8" />
+					<Variable name="BOARD_ID" value="mega8" />
+					<Variable name="MCU" value="atmega8" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="19200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+			<Target title="Microduino Core+ (644P)">
+				<Option output="build/Marlin_${BOARD_ID}.elf" prefix_auto="1" extension_auto="0" />
+				<Option object_output="build" />
+				<Option type="1" />
+				<Option compiler="avrgcc" />
+				<Compiler>
+					<Add option="-x c++" />
+					<Add option="-mmcu=$(MCU)" />
+					<Add option="-DF_CPU=16000000L" />
+					<Add option="-D__AVR_ATmega644P__" />
+					<Add option="-O2" />
+					<Add option="-Os" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/cores/arduino" />
+					<Add directory="$(ARDUINO_DIR)/libraries" />
+					<Add directory="$(ARDUINO_DIR)/hardware/arduino/variants/plus" />
+				</Compiler>
+				<Linker>
+					<Add option="-mmcu=$(MCU)" />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option='&quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add option="-s" />
+				</Linker>
+				<ExtraCommands>
+					<Add before='$(TARGET_COMPILER_DIR)ArduinoUploader &quot;$(PROJECT_DIR).&quot; $(BOARD_ID) - $(MCU_CLOCK) 0 &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/lib_${BOARD_ID}_${MCU_CLOCK}.a&quot; &quot;$(PROJECT_DIR)${TARGET_OUTPUT_DIR}/core_${BOARD_ID}_${MCU_CLOCK}.a&quot;' />
+					<Add after='avr-objcopy -O ihex -R .eeprom -R .eesafe &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).hex&quot;' />
+					<Add after='avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex &quot;$(TARGET_OUTPUT_FILE)&quot; &quot;$(TARGET_OUTPUT_FILE).eep.hex&quot;' />
+					<Add after='avr-size --mcu=$(MCU) --format=avr &quot;$(TARGET_OUTPUT_FILE)&quot;' />
+				</ExtraCommands>
+				<Environment>
+					<Variable name="BOARD" value="Microduino Core+ (644P)" />
+					<Variable name="BOARD_ID" value="uduino644p" />
+					<Variable name="MCU" value="atmega644p" />
+					<Variable name="MCU_CLOCK" value="16" />
+					<Variable name="UPLOAD_BAUDRATE" value="115200" />
+					<Variable name="UPLOAD_PORT" value="" />
+				</Environment>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-O2" />
+			<Add directory="." />
+		</Compiler>
+		<Unit filename="BlinkM.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="BlinkM.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Configuration.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ConfigurationStore.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ConfigurationStore.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Configuration_adv.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="DOGMbitmaps.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Hysteresis.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Hysteresis.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="LiquidCrystalRus.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="LiquidCrystalRus.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Marlin.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="MarlinSerial.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="MarlinSerial.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Marlin_main.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Sd2Card.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Sd2Card.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Sd2PinMap.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdBaseFile.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdBaseFile.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFatConfig.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFatStructs.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFatUtil.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFatUtil.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFile.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdFile.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdInfo.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdVolume.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="SdVolume.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Servo.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="Servo.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/U8glib.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/U8glib.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/chessengine.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_bitmap.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_circle.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_clip.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_api.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_api_16gr.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_attiny85_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_common.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_fast_parallel.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_hw_usart_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_no_en_parallel.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_parallel.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_port_d_wr.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_ssd_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_st7920_custom.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_st7920_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_st7920_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_std_sw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_sw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_t6963.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_arduino_uc_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_atmega_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_atmega_parallel.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_atmega_st7920_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_atmega_st7920_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_atmega_sw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_io.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_null.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_raspberrypi_hw_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_com_raspberrypi_ssd_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_cursor.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_delay.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_a2_micro_printer.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_flipdisc_2x7.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_gprof.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ht1632.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ili9325d_320x240.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ks0108_128x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_lc7981_160x80.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_lc7981_240x128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_lc7981_240x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_lc7981_320x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ld7032_60x32.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_null.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_pcd8544_84x48.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_pcf8812_96x65.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_sbn1661_122x32.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1306_128x32.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1306_128x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1309_128x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1322_nhd31oled_bw.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1322_nhd31oled_gr.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1325_nhd27oled_bw.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1325_nhd27oled_bw_new.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1325_nhd27oled_gr.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1325_nhd27oled_gr_new.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1327_96x96_gr.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_ssd1351_128x128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_64128n.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_dogm128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_dogm132.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_lm6059.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_lm6063.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_nhd_c12832.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7565_nhd_c12864.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7687_c144mvgd.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7920_128x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7920_192x32.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_st7920_202x32.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_t6963_128x128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_t6963_128x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_t6963_240x128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_t6963_240x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_tls8204_84x48.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1601_c128032.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1608_240x128.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1608_240x64.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1610_dogxl160.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1611_dogm240.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1611_dogxl240.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1701_dogs102.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_dev_uc1701_mini12864.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_ellipse.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_font.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_font_data.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_line.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_ll_api.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_page.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb14v1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb16h1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb16h2.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb16v1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb16v2.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb32h1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8h1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8h1f.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8h2.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8h8.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8v1.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pb8v2.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pbxh16.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_pbxh24.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_polygon.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_rect.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_rot.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_scale.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_state.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_u16toa.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_u8toa.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="U8glib/utility/u8g_virtual_screen.c">
+			<Option compilerVar="CC" />
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="boards.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="cardreader.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="cardreader.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="digipot_mcp4451.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="dogm_font_data_marlin.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="dogm_lcd_implementation.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="fastio.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_an.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_ca.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_de.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_en.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_es.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_eu.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_fi.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_fr.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_it.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_nl.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_pl.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_pt.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="language_ru.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="motion_control.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="motion_control.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="pins.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="planner.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="planner.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="qr_solve.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="qr_solve.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="speed_lookuptable.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="stepper.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="stepper.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="temperature.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="temperature.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="thermistortables.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ultralcd.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ultralcd.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ultralcd_implementation_hitachi_HD44780.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="ultralcd_st7920_u8glib_rrd.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="vector_3.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="vector_3.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="watchdog.cpp">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Unit filename="watchdog.h">
+			<Option target="Arduino Mega 2560/ADK" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

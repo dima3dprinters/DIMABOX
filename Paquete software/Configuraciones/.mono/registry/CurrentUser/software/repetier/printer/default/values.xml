@@ -1,0 +1,16 @@
+<values>
+<value name="baud"
+type="string">115200</value>
+<value name="resetOnEmergency"
+type="int">1</value>
+<value name="receiveCacheSize"
+type="int">63</value>
+<value name="port"
+type="string">/dev/ttyUSB0</value>
+<value name="resetOnConnect"
+type="int">0</value>
+<value name="pingPong"
+type="int">0</value>
+<value name="transferProtocol"
+type="int">0</value>
+</values>

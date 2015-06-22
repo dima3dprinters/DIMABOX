@@ -1,0 +1,20 @@
+<values>
+<value name="tempAutoscroll"
+type="int">1</value>
+<value name="tempShowAverage"
+type="int">0</value>
+<value name="tempShowExtruder"
+type="int">1</value>
+<value name="tempShowBed"
+type="int">0</value>
+<value name="tempShowOutput"
+type="int">1</value>
+<value name="tempShowTarget"
+type="int">0</value>
+<value name="tempZoomLevel"
+type="int">5</value>
+<value name="tempAverageSeconds"
+type="int">120</value>
+<value name="tempShowOutputBed"
+type="int">0</value>
+</values>

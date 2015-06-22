@@ -1,0 +1,10 @@
+<values>
+<value name="executable"
+type="string">/home/madrid/Programas/Slic3r/bin/slic3r</value>
+<value name="version"
+type="int">2</value>
+<value name="showPlater"
+type="int">0</value>
+<value name="configDir"
+type="string"/>
+</values>

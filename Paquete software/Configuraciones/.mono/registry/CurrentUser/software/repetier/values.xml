@@ -1,0 +1,22 @@
+<values>
+<value name="demoModelShown"
+type="int">1</value>
+<value name="workdir"
+type="string">/home/madrid/.local/share/RepetierHost</value>
+<value name="showHelpBubbles"
+type="int">1</value>
+<value name="logEnabled"
+type="int">0</value>
+<value name="lastInfoUpdateCheck"
+type="string">63570319018</value>
+<value name="reduceToolbarSize"
+type="int">0</value>
+<value name="installPath"
+type="string">/home/madrid/Programas/RepetierHost</value>
+<value name="disableQualityReduction"
+type="int">0</value>
+<value name="lastLoadModelFolder"
+type="string">/home/madrid/Escritorio/Calibración/Make 2015 3D Printer Shoot Out Test Models</value>
+<value name="currentPrinter"
+type="string">dima box</value>
+</values>
